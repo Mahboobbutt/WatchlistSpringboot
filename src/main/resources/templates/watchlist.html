@@ -25,7 +25,7 @@
                      <a class = "nav-link" href = "/watchlist">Watchlist</a>
                   </li>
                   <li class = "nav-item ">
-                     <a class = "nav-link" href = "WatchlistItemForm-static.html">Submit an item</a>
+                     <a class = "nav-link" href = "WatchlistItemForm">Submit an item</a>
                   </li>
                </ul>
             </div>
@@ -43,27 +43,13 @@
 		        </tr>
 		    </thead>
 			<tbody>
-				<tr>
-		            <td>Avatar</td>
-		            <td>7.8</td>
-		            <td>LOW</td>
-		            <td>Peter recommended</td>
-					<td><a href="#" class="btn btn-info" role="button">Update</a></td>
-				</tr>
-				<tr>
-		            <td>Inception</td>
-		            <td>8.7</td>
-		            <td>MEDIUM</td>
-		            <td>YouTube trailer was just awesome!</td>
-					<td><a href="#" class="btn btn-info" role="button">Update</a></td>
-				</tr>
-				<tr>
-		            <td>The Emoji Movie</td>
-		            <td>3.2</td>
-		            <td>HIGH</td>
-		            <td>The boss recommended, have to see it!</td>
-					<td><a href="#" class="btn btn-info" role="button">Update</a></td>
-				</tr>
+                            <tr th:each="watchlistitems : ${watchlistitems}">
+                                <td th:text ="${watchlistitems.title}"></td>
+                                <td th:text= "${watchlistitems.rating}"></td>
+                                <td th:text= "${watchlistitems.priority}"></td>
+                                <td th:text= "${watchlistitems.comment}"></td>
+                                <td><a href="#" class="btn btn-info" role="button">Update</a></td>
+                            </tr>
 			</tbody>
 		</table>
 		<hr/>
